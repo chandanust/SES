@@ -6,7 +6,7 @@ const app = express();
 
 mongoose.connect('mongodb+srv://chandan_ust:281741@cluster0-p0ufs.mongodb.net/SES?retryWrites=true&w=majority')
 .then('Connected to mongodb....')
-.catch(err => console.log('Error Occured...', err.message));
+.catch(err => console.log('Error Occured.....', err.message));
 
 app.use(express.json());
 app.use('/api/programs', programs);
