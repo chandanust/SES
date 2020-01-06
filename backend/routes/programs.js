@@ -29,8 +29,8 @@ router.post('/', async (req, res) => {
     programCode: req.body.programCode,
     programShortName: req.body.programShortName,
     programFullName: req.body.programFullName,
-    branch: req.body.branch,
-    semester: req.body.semester
+    programCategory: req.body.programCategory,
+    programNameInHindi: req.body.programNameInHindi
     });
     program = await program.save();
     res.send(program);

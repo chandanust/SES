@@ -5,16 +5,8 @@ const programSchema = new mongoose.Schema({
     programCode: {type: String, required: true},
     programShortName: String,
     programFullName: String,
-    branch:[{
-        branchCode: String, 
-        branchShortName: String,
-        branchFullName: String
-      }],
-      semester: [{
-          semesterCode: Number,
-          semesterShortName: String,
-          semesterFullName: String
-      }]
+    programCategory: String,
+    programNameInHindi: String
   });
   
   const Program = mongoose.model('Program', programSchema);
@@ -24,8 +16,8 @@ const programSchema = new mongoose.Schema({
     programCode: Joi.string().min(3).required(),
     programShortName: Joi.string().min(3).required(),
     programFullName: Joi.string(),
-    branch: Joi.array(),
-    semester: Joi.array()
+    programCategory: Joi.string(),
+    programNameInHindi: Joi.string()
   };
 
   return Joi.validate(program, schema);
