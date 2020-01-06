@@ -1,4 +1,4 @@
-fetch('http://localhost:5500/api/programs/')
+fetch('http://localhost:3000/api/programs/')
                 .then(response => response.json())
                 .then(programs => {
                     console.log(programs);
