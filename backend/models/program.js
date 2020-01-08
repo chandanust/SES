@@ -24,4 +24,5 @@ const programSchema = new mongoose.Schema({
 }
 
 exports.Program = Program;
+exports.programSchema = programSchema;
 exports.validate = validateProgram;

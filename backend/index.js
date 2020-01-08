@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const programs = require('./routes/programs');
+const branchs = require('./routes/branchs');
 const express = require('express');
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 //     next();
 //   });  
 app.use('/api/programs', programs);
+app.use('/api/branchs', branchs);
 
 
 const port = process.env.PORT || 3000;
