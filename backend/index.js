@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const programs = require('./routes/programs');
 const branchs = require('./routes/branchs');
+const semesters = require('./routes/semesters');
 const express = require('express');
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 //   });  
 app.use('/api/programs', programs);
 app.use('/api/branchs', branchs);
+app.use('/api/semesters', semesters);
 
 
 const port = process.env.PORT || 3000;
