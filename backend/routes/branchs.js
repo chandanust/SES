@@ -12,8 +12,9 @@ router.get('/', async (req, res) => {
 
 router.get('/:branchShortName', async (req, res) => {
   try{
+    // const branch = await Branch.find({program: {programId: req.params.programId}});
     const branch = await Branch.find({branchShortName: req.params.branchShortName});
-    if (!branch) return res.status(404).send('The branch with the given Short Name was not found.');
+    if (branch.length === 0 || !branch) return res.status(404).send('The branches with the given Short Name was not found.');
     res.send(branch);
   }catch(ex){
     console.log(ex.message);
@@ -32,7 +33,7 @@ router.post('/', async (req, res) => {
   try{
     let branch = new Branch({
     program: {
-      _id: program._id,
+      programId: program._id,
       programShortName: program.programShortName
     },
     branchCode: req.body.branchCode,

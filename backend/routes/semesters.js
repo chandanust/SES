@@ -10,13 +10,13 @@ router.get('/', async (req, res) => {
   res.send(semesters);
 });
 
-router.get('/:semesterCode', async (req, res) => {
+router.get('/:semesterShortName', async (req, res) => {
   try{
-    const semester = await Semester.find({semesterCode: req.params.semesterCode});
+    const semester = await Semester.find({semesterShortName: req.params.semesterShortName});
     if (!semester) return res.status(404).send('The Semester with the given Code was not found.');
     res.send(semester);
   }catch(ex){
-    console.log(ex.message);
+    res.status(500).send(ex.message);
   }
   
 });
